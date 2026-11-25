@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../services/auth_service.dart';
-import 'auth_screen.dart';
 
 const _bg = Color(0xFF090811);
 const _surface = Color(0xFF151321);
@@ -42,7 +41,6 @@ class _HomeScreenState extends State<HomeScreen> {
             tooltip: 'Sign out',
             onPressed: () async {
               await AuthService.instance.signOut();
-              if (context.mounted) Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_) => const AuthScreen()), (route) => false);
             },
             icon: const Icon(Icons.logout_rounded, color: Colors.white),
           ),
